@@ -38,15 +38,16 @@ Example Scenarios:
     Input: 0
     Output: "The number is zero"
 """
-def int_to_float(number):
-    print(float(number))
-    return float(number)
 
-def if_float_is_greater_than_zero(number):
-    if number > 0:
-        return "The number is positive"
-    elif number < 0:
-        return "The number is negative"
-    else:
-        return "The number is zero"
+import unittest
+from problem_4 import *
+class TestProblem4(unittest.TestCase):
+  
+  def testinttofloat(self):
+    self.assertEqual(int_to_float(1), 1.0)
+    
+  def testiffloatisgreaterthanzero(self):
+    self.assertEqual(if_float_is_greater_than_zero(1.0), "The number is positive")
+    self.assertEqual(if_float_is_greater_than_zero(-2.5), "The number is negative")
+    self.assertEqual(if_float_is_greater_than_zero(0), "The number is zero")
     

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Fri Jan 24 11:39:16 2025
 @author: Somaia
@@ -22,17 +21,12 @@ Instructions
 6. Combine intro and is_good_str using string concatenation, and assign the result to a new variable, message.
 7. Print the values of half_int, is_good_str, and message.
 """
-half = 0.5
-intro = "Hello! How are you?"
-is_good = True
+import unittest
+from problem_3 import *
 
-def float_to_int(half):
-  half_int =  int(half)
-  print (half_int)
-  return half_int
-
-def stringconcatenation(intro,is_good):
-  is_good_str = str(is_good)
-  message = intro + is_good_str
-  print(message)
-  return message
+class TestManipulation(unittest.TestCase):
+  def testfloattointerger(self):
+    self.assertEqual(float_to_int(0.5),0)
+    
+  def teststringconcatenation(self):
+    self.assertEqual(stringconcatenation("Hello! How are you?", True), "Hello! How are you?True")

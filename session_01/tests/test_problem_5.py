@@ -50,16 +50,14 @@ Example Scenarios:
     Input: 0
     Output: "x is zero"
 """
+import unittest
+from problem_5 import *
 
-def convert_to_int(x):
-    return int(x)
-
-def is_int_greater_than_zero(x):
-    if x > 0 and x % 2 == 0:
-        return "x is a positive even number"
-    elif x > 0 and x % 2 != 0:
-        return "x is a positive odd number"
-    elif x < 0:
-        return "x is a negative number"
-    else:
-        return "x is zero"
+class TestProblem5(unittest.TestCase):
+  def converttoint(self):
+    self.assertEqual(convert_to_int("6"), 6)
+    
+    def assert_equal(self):
+      self.assertEqual(is_int_greater_than_zero(6), "x is a positive even number")
+      self.assertEqual(is_int_greater_than_zero(-4), "x is a negative number")
+      self.assertEqual(is_int_greater_than_zero(0), "x is zero")

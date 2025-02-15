@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Fri Jan 24 11:39:16 2025
 @author: Somaia
@@ -16,16 +15,9 @@ Instructions
 4. Finally, display the value of new_savings using the print() function.
 
 """
-# Assign values to variables
-monthly_savings = 10
-num_months = 4 
-# Perform the calculation
-new_savings = monthly_savings * num_months
+import unittest
+from problem_2 import *
 
-# Print the result
-print(new_savings)
-
-def your_savings(monthly_savings, num_months):
-  new_savings = monthly_savings * num_months
-  print(new_savings)
-  return new_savings
+class TestMonthlySavings(unittest.TestCase):
+  def testmonthlysaving(self):
+    self.assertEqual(your_savings(10, 4), 40)
